@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+       {% block content %}
+
+            <h1>Assalomu alaykum</h1>
+
+            <a href="{% url 'users:login' %}">Kirish</a> |
+            <a href="{% url 'users:register' %}">Ro'yxatdan o'tish</a>
+
+
+        {% endblock %}
