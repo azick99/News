@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap');
+
+$myTransition: all .4s ease-in-out;
+
+@media screen and (max-width:600px) {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.1rem;
+        background-color: var(--almost-white);
+    }
+
+    :root {
+        --almost-white: hsl(0, 0%, 98%);
+        --pirmary-color: #FC5185;
+        --secondary-color: #364F6B;
+        --gradium-blue: #99E1E5;
+        --light-blue: #00E0FF;
+    }
+
+    /* Head Section */
+    header {
+        min-height: 100vh;
+        color: var(--color-white);
+        overflow: hidden;
+
+        @media screen and (max-width:610px) {
+            min-height: 100vh;
+        }
+    }
+
+    section {
+        min-height: 100vh;
+        width: 100%;
+        transform: translateY(-100%) scale(0);
+        transition: $myTransition;
+        display: none;
+    }
+
+    .control-5 {
+        color: var(--pirmary-color);
+        padding: 10px 15px;
+        border-radius: 50%;
+
+        i {
+
+            font-size: 23px;
+        }
+
+        &:hover {
+            background-color: var(--pirmary-color);
+            color: var(--almost-white);
+            transition: $myTransition;
+            border: 1px solid var(--pirmary-color);
+        }
+    }
+
+    .head-control {
+        border-radius: 50%;
+        padding: 10px;
+        background-color: var(--pirmary-color);
+        color: var(--almost-white);
+
+        &:hover {
+            background-color: var(--almost-white);
+            color: var(--pirmary-color);
+            transition: $myTransition;
+        }
+    }
+
+    .sec1,
+    .sec2,
+    .sec3,
+    .sec4,
+    .sec5 {
+        animation: scaleAnim 1s ease-in-out;
+        display: none;
+        transform: translateY(0) scale(1);
+    }
+
+
+    .active {
+        display: block;
+        animation: scaleAnim 1s ease-in-out;
+
+        @keyframes scaleAnim {
+            0% {
+                transform: translateY(-100%) scaleY(0)
+            }
+
+            100% {
+                transform: translatY(0) scale(1)
+            }
+        }
+    }
+
+    .header-contanier {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+
+        i {
+            cursor: pointer;
+        }
+    }
+
+    .head-text {
+        font-family: 'Lobster Two', cursive;
+        font-size: 2rem;
+        color: var(--secondary-color);
+    }
+
+    /* Swipe panels section */
+
+
+    .swiper {
+        width: 90%;
+        height: 580px;
+        margin-bottom: 70px;
+    }
+
+    .swiper-wrapper {
+        align-items: center;
+    }
+
+
+    .swiper-slide {
+        font-size: 18px;
+        background: var(--almost-white);
+
+    }
+
+    .swiper-slide video,
+    img {
+        border-radius: 25px;
+        display: block;
+        width: 100%;
+        height: 500px;
+        object-fit: contain;
+    }
+
+
+
+    .swiper {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .swiper-btn-next {
+        background-color: var(--gradium-blue);
+
+        &:hover {
+            background-color: var(--almost-white);
+            color: var(--gradium-blue);
+            border: 1px solid var(--gradium-blue);
+            transition: $myTransition;
+        }
+    }
+
+    .swiper-btn-prev {
+        background-color: var(--pirmary-color);
+
+        &:hover {
+            background-color: var(--almost-white);
+            color: var(--pirmary-color);
+            border: 1px solid var(--pirmary-color);
+            transition: $myTransition;
+        }
+    }
+
+    .swiper-btn-next,
+    .swiper-btn-prev {
+        cursor: pointer;
+        color: var(--almost-white);
+        border-radius: 50%;
+        padding: 10px 15px;
+        font-size: 30px;
+    }
+
+    //Card Section
+
+
+    .text {
+        position: absolute;
+        bottom: 30%;
+        padding-left: 20px;
+        margin-left: 20px;
+        color: var(--almost-white);
+        background-color: var(--secondary-color);
+        padding: 10px;
+    }
+
+    .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 20px 0;
+    }
+
+
+    .share {
+        transition: $myTransition;
+        padding: 5px 10px;
+        background-color: var(--almost-white);
+        border: 1px solid var(--light-blue);
+        border-radius: 50%;
+
+    }
+
+    .share-btn {
+        border: none;
+        background: var(--almost-white);
+        color: var(--light-blue);
+        border-radius: 50%;
+        font-size: 30px;
+        padding-top: 5px;
+        padding-right: 5px;
+        cursor: pointer;
+    }
+
+    /* Footer menu*/
+    .controlls {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: var(--almost-white);
+
+        .control {
+            cursor: pointer;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-size: 24px;
+            color: var(--secondary-color);
+        }
+    }
+
+
+
+    .active-btn {
+        display: block !important;
+
+    }
+
+    .active {
+        border-top: 5px solid var(--pirmary-color);
+        color: var(--pirmary-color) !important;
+    }
+
+
+    // Login Section
+    .box {
+        padding: 40px;
+        background-color: var(--secondary-color);
+        text-align: center;
+        input[type='text'],
+        input[type='password'],input[type='email'] {
+            border: 0;
+            display: block;
+            background: none;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid var(--light-blue);
+            padding: 14px 10px;
+            outline: none;
+            color: var(--almost-white);
+            border-radius: 15px;
+            transition: 0.25s;
+
+            &:focus {
+                width: 280px;
+                transition: 0.25s;
+                border-color: var(--pirmary-color);
+            }
+
+        }
+
+        input[type='submit'] {
+            border: 0;
+            display: block;
+            background: none;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid var(--pirmary-color);
+            padding: 14px 40px;
+            outline: none;
+            color: var(--almost-white);
+            border-radius: 15px;
+            transition: 0.25s;
+            cursor: pointer;
+
+            &:hover {
+                background: var(--pirmary-color);
+            }
+        }
+
+        h1 {
+            color: var(--almost-white);
+            text-transform: uppercase;
+            font-weight: 500;
+
+        }
+    }
+
+
+}
